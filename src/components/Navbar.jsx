@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { data } from "../restApi.json";
 import { Link } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
+
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const navbarLinks = data[0].navbarLinks;
+
   return (
     <>
       <nav>
         <div className="logo">MAYANK'S RESTAURANT</div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
           <div className="links">
-            {data[0].navbarLinks.map((element) => (
+            {navbarLinks.map((element) => (
               <Link
                 to={element.link}
                 spy={true}
@@ -24,7 +27,11 @@ const Navbar = () => {
           </div>
           <button className="menuBtn">OUR MENU</button>
         </div>
-        <div className="hamburger" onClick={() => setShow(!show)}>
+        <div
+          className="hamburger"
+          onClick={() => setShow(!show)}
+          aria-label="Toggle Menu"
+        >
           <GiHamburgerMenu />
         </div>
       </nav>

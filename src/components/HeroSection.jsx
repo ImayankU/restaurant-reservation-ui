@@ -1,38 +1,40 @@
 import React from "react";
-import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
+import { HiOutlineArrowRight } from "react-icons/hi";
 
-const HeroSection = () => {
+const About = () => {
   return (
-    <section className="heroSection" id="heroSection">
-      <Navbar />
-      <div className="container">
-        <div className="banner">
-          <div className="largeBox">
-            <h1 className="title">Delicious</h1>
+    <>
+      <section className="about" id="about">
+        <div className="container">
+          <div className="banner">
+            <div className="top">
+              <h1 className="heading">ABOUT US</h1>
+              <p>The only thing we're serious about is food.</p>
+            </div>
+            <p className="mid">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Provident possimus optio adipisci dolores impedit illum iusto
+              perferendis, laudantium quod accusamus consequuntur consectetur,
+              tempore nulla error iure reiciendis dolorem assumenda.
+              Necessitatibus fugit asperiores totam rem esse exercitationem
+              iusto ipsum qui dolore ex, accusantium repellat mollitia
+              repellendus.
+            </p>
+            <Link to={"/"}>
+              Explore Menu{" "}
+              <span>
+                <HiOutlineArrowRight />
+              </span>
+            </Link>
           </div>
-          <div className="combined_boxes">
-            <div className="imageBox">
-              <img src="./hero1.png" alt="hero" />
-            </div>
-            <div className="textAndLogo">
-              <div className="textWithSvg">
-                <h1 className="title">Food</h1>
-                <h1 className="title dishes_title">Dishes</h1>
-                <img src="./threelines.svg" alt="threelines" />
-              </div>
-              <img className="logo" src="logo.svg" alt="logo" />
-            </div>
+          <div className="banner">
+            <img src="about.png" alt="about" />
           </div>
         </div>
-        <div className="banner">
-          <div className="imageBox">
-            <img src="hero2.png" alt="hero" />
-          </div>
-          <h1 className="title dishes_title">Dishes</h1>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
-export default HeroSection;
+export default About;
